@@ -1,0 +1,90 @@
+.chat {
+    display: flex;
+    min-height: 60vh;
+    margin: 50px 0;
+    flex-direction: column;
+    .responseArea {
+        width: 50vw;
+        margin: auto;
+    }
+    .currentUserArea {
+        width: 50vw;
+        margin: auto;
+        &__container {
+            margin-top: auto;
+        display: flex;
+        }
+        &__input {
+            width: calc(100% - 130px);
+        }
+    }
+}
+
+.message {
+    margin-bottom: 30px;
+    width: fit-content;
+    &__pseudo {
+        font-weight: bold; 
+    }
+    &__date {
+        color: grey;
+        margin: 10px 0px 0px 15px;
+        display: inline-block;
+        font-size: 0.8rem;
+
+    }
+    &__bubble {
+        margin: 20px 05px 0px 15px;
+        background-color: rgb(5, 189, 30);
+        padding: 10px;
+        border-radius: 0px  30px 30px 30px;
+        color: white;
+        position: relative;
+        width: fit-content;
+        z-index: 1;
+        &:after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 25px;
+
+            top: -10px;
+            left: 0px;
+            width: 0px;
+            height: 0px;
+            border-style: solid;
+            border-width: 0 10px 10px 0px;
+            border-color: transparent transparent  rgb(5, 189, 30) transparent;
+            transform: rotate(0deg);
+        }
+    }
+    &--current-user {
+        margin-left: auto;
+        text-align: right;
+        .message__bubble {
+            background-color: rgb(0, 102, 255);
+            border-radius: 30px 0px 30px 30px;
+            position: relative;
+            margin-right: 15px;
+            &:after {
+                content: "";
+                position: relative;
+                width: 5px;
+                height: 25px;
+    
+                right: 7px;
+                top: -38px;
+                left: 10px;
+                width: 0px;
+                height: 0px;
+                border-style: solid;
+                border-width: 0 0px 10px 10px;
+                border-color: transparent transparent  rgb(0, 102, 255) transparent;
+                transform: rotate(0deg);
+            }
+        }
+        .message__date {
+            margin-right: 15px;
+        }
+    }
+}

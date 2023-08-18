@@ -1,0 +1,16 @@
+header {
+    background-color: rgb(40, 40, 40);
+    padding: 30px 20px;
+    display: flex;
+};
+
+.header__ {
+    &btn-logout {
+        margin-left: auto;
+    }
+    &logo {
+        color: white;
+        font-size: 40px;
+        font-family: 'Shrikhand-Regular';
+    }
+}
