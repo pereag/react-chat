@@ -7,10 +7,6 @@ const Header = (props) => {
         removePseudoValue()
     }
 
-    useEffect(() => {
-        console.debug(pseudo)
-    })
-
 
     const button = pseudo && <button onClick={onClickLogoutBtn} className="header__btn-logout">Logout</button>
 

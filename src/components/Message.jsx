@@ -1,5 +1,11 @@
+import moment from "moment";
+
 const Message = (props) => {
     const {itsCurrentUser, pseudo, message, date} = props
+
+    const getDateFormat = (date) => {
+        return moment(date).add(3, 'days').calendar();
+    }
 
     const currentUserStyle = itsCurrentUser ? "message message--current-user" :  "message"
 
@@ -9,7 +15,7 @@ const Message = (props) => {
             <div className="message__bubble">
                 {message}
             </div>
-            <span className="message__date">{date}</span>
+            <span className="message__date">{getDateFormat(date)}</span>
         </div>
     )
 }

@@ -12,7 +12,7 @@ const Home = (props) => {
     const onClickEnterBtn = (e) => {
         e.stopPropagation()
         e.preventDefault()
-        editCurrentPseudo(pseudo)
+        editCurrentPseudo(pseudo.charAt(0).toUpperCase() + pseudo.slice(1))
     }
 
     return (

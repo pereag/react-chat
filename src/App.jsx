@@ -12,6 +12,7 @@ import { useState } from 'react';
 
 function App() {
   const [currentPseudo, setCurrentPseudo] = useState("")
+  const [messagesList, setMessagesList] = useState ([{pseudo: "Valou", message: "Hello Mec", date: Date() }, {pseudo: "Pierre", message: "Salut les gas", date: Date() }])
   function removePseudoValue() {
     setCurrentPseudo("")
   }
@@ -20,9 +21,15 @@ function App() {
     setCurrentPseudo(value)
   }
 
+  const editMessagesList = (value) => {
+    console.log([...messagesList, {pseudo: currentPseudo, message: value, date: Date()}])
+    setMessagesList([...messagesList, {pseudo: currentPseudo, message: value, date: Date()}])
+    console.log(value);
+  }
+
   return (
     <div>
-    <ChatContext.Provider value={"yolo"}>
+    <ChatContext.Provider value={[messagesList, editMessagesList]}>
     <BrowserRouter>
       <Header pseudo={currentPseudo} removePseudoValue={() => removePseudoValue()} ></Header>
           <Routes>
