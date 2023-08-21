@@ -34,7 +34,6 @@ function App() {
       <Header pseudo={currentPseudo} removePseudoValue={() => removePseudoValue()} ></Header>
           <Routes>
             <Route exact path="/" element={!currentPseudo ? <Home editCurrentPseudo={(value) => editCurrentPseudo(value)}/> : <Chat currentPseudo={currentPseudo} />}/>
-            <Route path="/chat" element={currentPseudo ? <Home editCurrentPseudo={(value) => editCurrentPseudo(value)}/> : <Chat currentPseudo={currentPseudo} />}/>
             <Route path="*" element={<ErrorPage/>}/>
           </Routes>
         <Footer></Footer>
